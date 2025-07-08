@@ -285,7 +285,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 title: "Acoustic Treatment",
                 content: (
                   <>
-                    Designed and implemented custom acoustic solutions...
+                    Designed and implemented custom acoustic solutions for recording studios, churches and production spaces. In 2018, I had the incredible opportunity to design and build the audio production studio for the Production Center Face Time.
                     <img
                       src="/img/recording-studio.jpg"
                       alt="recording studio"
@@ -303,7 +303,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 title: "AV Networking",
                 content: (
                   <>
-                    I’m Dante Level 3 certified...
+                    I’m Dante Level 3 certified and have a strong IT background, which helps me create reliable, future-ready AV systems.
                     <img
                       src="/img/dante-certificate.png"
                       alt="Dante certificate"
@@ -319,7 +319,9 @@ export default function About({ isOpen, onClose }: AboutProps) {
               },
               {
                 title: "Church AV Projects",
-                content: <>Helped multiple churches set up, tune, and run...</>,
+                content: <>
+                  Helped multiple churches set up, tune, and run their sound and video systems—plus training teams to feel confident using them.
+                </>,
               },
               {
                 title: "AV Director",
@@ -330,7 +332,8 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 title: "Cover Band Production",
                 content: (
                   <>
-                    Produced and managed a full-scale cover band...
+                    Produced and managed a full-scale cover band—handled sound, lights, video content, and stage design to create a full concert experience.
+
                     <div style={{ marginTop: "1rem" }}>
                       <video
                         playsInline
@@ -354,7 +357,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 title: "Video & Streaming",
                 content: (
                   <>
-                    Comfortable behind the camera too—filming, editing...
+                    Comfortable behind the camera too—filming, editing, and streaming events and content.
                     <div style={{ marginTop: "1rem" }}>
                       <video
                         playsInline
