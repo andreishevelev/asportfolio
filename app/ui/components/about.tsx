@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
 type AboutProps = {
   isOpen: boolean;
@@ -7,6 +7,7 @@ type AboutProps = {
 
 export default function About({ isOpen, onClose }: AboutProps) {
   const modalContentRef = useRef<HTMLDivElement | null>(null);
+  const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -424,6 +425,47 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 </div>
               </div>
             ))}
+
+            {/* NEXT button container with higher z-index */}
+            <div
+              style={{
+                marginTop: "2.5rem",
+                textAlign: "center",
+                position: "relative",
+                zIndex: 10,
+              }}
+            >
+              <button
+                onClick={onClose}
+                style={{
+                  width: "100%",
+                  background: "linear-gradient(90deg, #a164ff, #61dafb, #ff77e9)",
+                  border: "none",
+                  borderRadius: "10px",
+                  padding: "0.75rem 1.5rem",
+                  fontSize: "1.1rem",
+                  fontWeight: 700,
+                  color: "#0f0f28",
+                  boxShadow: "0 0 12px rgba(180, 100, 255, 0.6)",
+                  cursor: "pointer",
+                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                  position: "relative",
+                  zIndex: 10,
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.boxShadow =
+                    "0 0 16px rgba(180, 100, 255, 0.8)";
+                  e.currentTarget.style.transform = "scale(1.03)";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.boxShadow =
+                    "0 0 12px rgba(180, 100, 255, 0.6)";
+                  e.currentTarget.style.transform = "scale(1)";
+                }}
+              >
+                Next
+              </button>
+            </div>
           </div>
           <div className="modal-gradient-fade" />
         </div>
