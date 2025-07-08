@@ -379,11 +379,11 @@ export default function About({ isOpen, onClose }: AboutProps) {
               },
               {
                 title: "AV Gear Rentals",
-                content: "I also run my own small AV rental company...",
+                content: "I also run my own small AV rental company—perfect for events, church upgrades, or short-term projects.",
               },
               {
                 title: "Content Creator",
-                content: "I share tips, behind-the-scenes looks, and gear reviews...",
+                content: "I share tips, behind-the-scenes looks, and gear reviews on my blog and YouTube channel—check them out if you’re into AV stuff!",
               },
             ].map(({ title, content }, index) => (
               <div
