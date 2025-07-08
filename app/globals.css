@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+.app-container {
+  @apply flex bg-white tablet:bg-[#E1E1E1] items-center justify-center
+}
+
+.content-container {
+  @apply w-full max-w-[1200px] top-[-20px];
+}
+
+.top-nav-out-container {
+  @apply flex items-center h-[40px] justify-center z-50 max-w-[1200px] mx-auto;
+}
+
+.top-nav-left-container {
+  @apply hidden tablet:flex  
+}
+
+.top-nav-center-container {
+  @apply hidden tablet:flex bg-gray-500 tablet:flex grow font-extrabold text-white text-[40px]
+}
+
+.top-nav-right-container {
+  @apply flex  w-full
+}
+
+.top-nav-px {
+  @apply px-[20px]
+}
+
+.top-nav-item {
+  @apply text-black tablet:text-[20px]
+}
+
+.lr-margin {
+  @apply px-[10px]
+}
+
+.hero-mobile-top {
+  @apply bg-[#4F8D9F] h-[178px] z-20  rounded-t-[20px]
+}
+
+.hero-container {
+  @apply bg-white h-[123px] sticky top-[-40px] z-10
+}
+
+.hero-img {
+  @apply w-[208px] z-20 absolute top-[33px] right-[10px];
+}
+
+.hero-text {
+  @apply text-white text-[40px] pl-5 pt-4 space-y-3 font-extrabold z-10 absolute
+}
+
