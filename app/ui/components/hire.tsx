@@ -16,11 +16,15 @@ export default function Hire({ isOpen, onClose }: HireProps) {
     if (isOpen) {
       window.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
     }
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.width = "";
     };
   }, [isOpen, onClose]);
 
@@ -48,27 +52,31 @@ export default function Hire({ isOpen, onClose }: HireProps) {
             justify-content: center;
             align-items: center;
             z-index: 100;
-            overflow-y: auto;
-            padding: 1rem;
+            overflow: hidden;
+            padding: 0;
           }
 
           .modal-content {
             background: white;
-            padding: 0.0rem;
-            border-radius: 12px;
-            max-width: 700px;
             width: 100%;
+            max-width: 700px;
+            height: 100%;
             max-height: 90vh;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.25);
             display: flex;
             flex-direction: column;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+            overflow: hidden;
+            position: relative;
+            border-radius: 12px;
           }
 
           .modal-header {
             display: flex;
             justify-content: flex-end;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
           }
 
           .modal-close-button {
@@ -82,7 +90,6 @@ export default function Hire({ isOpen, onClose }: HireProps) {
             cursor: pointer;
             box-shadow: 0 1px 1px rgba(0,0,0,0.1);
             transition: background-color 0.2s ease, box-shadow 0.2s ease;
-
           }
 
           .modal-close-button:hover {
@@ -93,6 +100,7 @@ export default function Hire({ isOpen, onClose }: HireProps) {
           .iframe-wrapper {
             flex: 1;
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
           }
 
           @media (max-width: 600px) {
