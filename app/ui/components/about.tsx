@@ -74,7 +74,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
           border-radius: 20px;
           max-width: 900px;
           width: 100%;
-          max-height: 90dvh;
+          max-height: 95dvh;
           color: #bbbde1;
           box-shadow:
             0 0 12px 1px rgba(180, 100, 255, 0.6),
@@ -89,7 +89,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
         /* Responsive padding */
         @media (max-width: 600px) {
           .modal-content {
-            padding: 1.5rem 1.2rem 2rem 1.2rem !important;
+            padding: 4rem 1rem 1rem 1rem !important;
             box-shadow: 0 0 6px 1px rgba(180, 100, 255, 0.35) !important;
             max-height: 100dvh;
           }
@@ -103,14 +103,14 @@ export default function About({ isOpen, onClose }: AboutProps) {
 
         @media (min-width: 601px) {
           .modal-content {
-            padding: 2.5rem 3rem 3rem 3rem;
+            padding: 1rem 1rem 1rem 1rem;
           }
         }
 
         /* Close button styling */
         .modal-close-button {
           position: absolute;
-          top: 30px;
+          top: 10px;
           right: 16px;
           z-index: 10;
           background: transparent;
@@ -141,8 +141,8 @@ export default function About({ isOpen, onClose }: AboutProps) {
         /* Scrollable content inside modal */
         .modal-scrollable-content {
           overflow-y: auto;
-          max-height: calc(90dvh - 4.5rem);
-          padding-right: 1.5rem;
+          max-height: calc(90dvh - 3.5rem);
+          padding-right: 0.5rem;
           scrollbar-width: none; /* Firefox */
           -ms-overflow-style: none; /* IE 10+ */
           flex: 1;
@@ -422,7 +422,6 @@ export default function About({ isOpen, onClose }: AboutProps) {
               </div>
             ))}
           </div>
-
           <div className="modal-gradient-fade" />
         </div>
       </div>
