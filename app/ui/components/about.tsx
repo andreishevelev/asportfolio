@@ -212,10 +212,10 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 title: "Acoustic Treatment",
                 content: (
                   <>
-                    Designed and implemented custom acoustic solutions for recording studios, churches and production spaces. In 2018, I had the incredible opportunity to design and build the audio production studio for the Production Center Face Time.
+                    Designed and implemented custom acoustic solutions...
                     <img
                       src="/img/recording-studio.jpg"
-                      alt="recording studio image"
+                      alt="recording studio"
                       style={{
                         borderRadius: "12px",
                         boxShadow: "0 0 12px rgba(180, 100, 255, 0.5)",
@@ -230,7 +230,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 title: "AV Networking",
                 content: (
                   <>
-                    I’m Dante Level 3 certified and have a strong IT background, which helps me create reliable, future-ready AV systems.
+                    I’m Dante Level 3 certified...
                     <img
                       src="/img/dante-certificate.png"
                       alt="Dante certificate"
@@ -248,7 +248,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 title: "Church AV Projects",
                 content: (
                   <>
-                    Helped multiple churches set up, tune, and run their sound and video systems—plus training teams to feel confident using them.
+                    Helped multiple churches set up, tune, and run...
                   </>
                 ),
               },
@@ -261,7 +261,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 title: "Cover Band Production",
                 content: (
                   <>
-                    Produced and managed a full-scale cover band—handled sound, lights, video content, and stage design to create a full concert experience.
+                    Produced and managed a full-scale cover band...
                     <div style={{ marginTop: "1rem" }}>
                       <video
                         playsInline
@@ -285,7 +285,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 title: "Video & Streaming",
                 content: (
                   <>
-                    Comfortable behind the camera too—filming, editing, and streaming events and content.
+                    Comfortable behind the camera too—filming, editing...
                     <div style={{ marginTop: "1rem" }}>
                       <video
                         playsInline
@@ -308,16 +308,16 @@ export default function About({ isOpen, onClose }: AboutProps) {
               {
                 title: "AV Gear Rentals",
                 content:
-                  "I also run my own small AV rental company—perfect for events, church upgrades, or short-term projects.",
+                  "I also run my own small AV rental company...",
               },
               {
                 title: "Content Creator",
                 content:
-                  "I share tips, behind-the-scenes looks, and gear reviews on my blog and YouTube channel—check them out if you’re into AV stuff!",
+                  "I share tips, behind-the-scenes looks, and gear reviews...",
               },
-            ].map(({ title, content }) => (
+            ].map(({ title, content }, index) => (
               <div
-                key={title}
+                key={index}
                 style={{
                   marginBottom: "1.8rem",
                   display: "flex",
@@ -350,7 +350,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                   >
                     {title}
                   </p>
-                  <p style={{ lineHeight: 1.45 }}>{content}</p>
+                  <div style={{ lineHeight: 1.45 }}>{content}</div> {/* ✅ FIXED */}
                 </div>
               </div>
             ))}
@@ -371,7 +371,6 @@ export default function About({ isOpen, onClose }: AboutProps) {
               borderBottomRightRadius: "20px",
             }}
           />
-
         </div>
       </div>
     </>

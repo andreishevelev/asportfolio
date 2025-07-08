@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Modal from "./hire";
 import { reviews } from "../../../data/reviews"
 
@@ -20,22 +20,22 @@ export default function Portfolio({ isModalOpen, setIsModalOpen }: PortfolioProp
           </h2>
         </div>
 
-        {reviews.map((item) => (
-          <>
+        {reviews.map((item, index) => (
+          <Fragment key={index}>
             <section
-              key={item.index}
+              key={index}
               className={`
-    scroll-mt-[40px]
-    overflow-hidden
-    relative
-    bg-black
-    bg-cover
-    bg-center
-    bg-no-repeat
-    bg-fixed
-    z-0
-    rounded-[20px]
-  `}
+                scroll-mt-[40px]
+                overflow-hidden
+                relative
+                bg-black
+                bg-cover
+                bg-center
+                bg-no-repeat
+                bg-fixed
+                z-0
+                rounded-[20px]
+              `}
               style={{
                 backgroundColor: "#111",
                 backgroundImage: `url(${item.background})`,
@@ -85,7 +85,7 @@ export default function Portfolio({ isModalOpen, setIsModalOpen }: PortfolioProp
               </div>
             </section>
             <div className="mt-10"></div>
-          </>
+          </Fragment>
         ))}
 
       </div>
