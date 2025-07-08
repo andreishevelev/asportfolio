@@ -32,7 +32,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
       <style>{`
         @media (max-width: 600px) {
           .modal-content {
-            padding: 1.5rem 1.2rem 2rem 1.2rem !important;
+            padding: calc(1.5rem + env(safe-area-inset-top)) 1.2rem 2rem 1.2rem !important;
             box-shadow: 0 0 6px 1px rgba(180, 100, 255, 0.35) !important;
           }
 
@@ -45,7 +45,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
 
         @media (min-width: 601px) {
           .modal-content {
-            padding: 2.5rem 3rem 3rem 3rem;
+            padding: calc(2.5rem + env(safe-area-inset-top)) 3rem 3rem 3rem;
           }
         }
       `}</style>
@@ -358,7 +358,6 @@ export default function About({ isOpen, onClose }: AboutProps) {
               borderBottomRightRadius: "20px",
             }}
           />
-
         </div>
       </div>
     </>
