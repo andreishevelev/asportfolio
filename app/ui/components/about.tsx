@@ -268,7 +268,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                         muted
                         playsInline
                         width="100%"
-                        poster="/live-events.png"
+                        poster="/live-events.jpg"
                         style={{
                           borderRadius: "12px",
                           boxShadow: "0 0 12px rgba(180, 100, 255, 0.5)",
@@ -340,7 +340,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                         playsInline
                         controls
                         width="100%"
-                        poster="/cover-band.png"
+                        poster="/cover-band.jpg"
                         style={{
                           borderRadius: "12px",
                           boxShadow: "0 0 12px rgba(180, 100, 255, 0.5)",
@@ -364,7 +364,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                         playsInline
                         controls
                         width="100%"
-                        poster="/video-and-streaming.png"
+                        poster="/video-and-streaming.jpg"
                         style={{
                           borderRadius: "12px",
                           boxShadow: "0 0 12px rgba(180, 100, 255, 0.5)",
