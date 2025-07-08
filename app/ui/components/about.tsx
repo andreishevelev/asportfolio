@@ -40,10 +40,58 @@ export default function About({ isOpen, onClose }: AboutProps) {
   return (
     <>
       <style>{`
+        /* Body scroll lock when modal is open */
+        body.about-open {
+          overflow: hidden;
+          touch-action: none;
+          height: 100vh;
+        }
+
+        /* Overlay styles */
+        .modal-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(15, 15, 40, 0.85);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+          font-family: 'Inter', sans-serif;
+          padding: 1rem;
+          overflow: auto;
+        }
+
+        /* Modal content container */
+        .modal-content {
+          position: relative;
+          background-color: rgba(15, 15, 40, 0.85);
+          backdrop-filter: saturate(180%) blur(20px);
+          -webkit-backdrop-filter: saturate(180%) blur(20px);
+          border: 1.5px solid transparent;
+          background-clip: padding-box;
+          border-radius: 20px;
+          max-width: 900px;
+          width: 100%;
+          max-height: 90dvh;
+          color: #bbbde1;
+          box-shadow:
+            0 0 12px 1px rgba(180, 100, 255, 0.6),
+            inset 0 0 30px 3px rgba(130, 80, 255, 0.3),
+            0 0 40px 10px rgba(180, 100, 255, 0.3);
+          animation: glowingShadow 10s ease infinite;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* Responsive padding */
         @media (max-width: 600px) {
           .modal-content {
             padding: 1.5rem 1.2rem 2rem 1.2rem !important;
             box-shadow: 0 0 6px 1px rgba(180, 100, 255, 0.35) !important;
+            max-height: 100dvh;
           }
 
           .modal-scrollable-content video,
@@ -58,6 +106,86 @@ export default function About({ isOpen, onClose }: AboutProps) {
             padding: 2.5rem 3rem 3rem 3rem;
           }
         }
+
+        /* Close button styling */
+        .modal-close-button {
+          position: absolute;
+          top: 30px;
+          right: 16px;
+          z-index: 10;
+          background: transparent;
+          border: none;
+          font-size: 2.8rem;
+          font-weight: 700;
+          line-height: 1;
+          cursor: pointer;
+          color: #ff77e9;
+          text-shadow:
+            0 0 8px #ff77e9,
+            0 0 18px #d358f7,
+            0 0 28px #61dafb,
+            0 0 38px #a164ff;
+          transition: color 0.3s ease, text-shadow 0.3s ease;
+          user-select: none;
+          padding: 0;
+        }
+        .modal-close-button:hover,
+        .modal-close-button:focus {
+          color: #d358f7;
+          outline: none;
+          text-shadow:
+            0 0 12px #d358f7,
+            0 0 24px #a164ff;
+        }
+
+        /* Scrollable content inside modal */
+        .modal-scrollable-content {
+          overflow-y: auto;
+          max-height: calc(90dvh - 4.5rem);
+          padding-right: 1.5rem;
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE 10+ */
+          flex: 1;
+          position: relative;
+        }
+        .modal-scrollable-content::-webkit-scrollbar {
+          display: none; /* Chrome, Safari */
+        }
+
+        /* Gradient fade at bottom */
+        .modal-gradient-fade {
+          pointer-events: none;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 12rem;
+          background: linear-gradient(
+            to bottom,
+            rgba(15, 15, 40, 0) 0%,
+            rgba(15, 15, 40, 0.25) 30%,
+            rgba(15, 15, 40, 0.7) 70%,
+            rgba(15, 15, 40, 1) 100%
+          );
+          z-index: 5;
+          border-bottom-left-radius: 20px;
+          border-bottom-right-radius: 20px;
+        }
+
+        @keyframes glowingShadow {
+          0%, 100% {
+            box-shadow:
+              0 0 12px 1px rgba(180, 100, 255, 0.6),
+              inset 0 0 30px 3px rgba(130, 80, 255, 0.3),
+              0 0 40px 10px rgba(180, 100, 255, 0.3);
+          }
+          50% {
+            box-shadow:
+              0 0 20px 2px rgba(230, 150, 255, 0.8),
+              inset 0 0 35px 5px rgba(160, 110, 255, 0.5),
+              0 0 50px 15px rgba(230, 150, 255, 0.5);
+          }
+        }
       `}</style>
 
       <div
@@ -66,77 +194,22 @@ export default function About({ isOpen, onClose }: AboutProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
-        style={{
-          position: "fixed",
-          inset: 0,
-          background: "rgba(15, 15, 40, 0.85)",
-          backdropFilter: "blur(16px)",
-          WebkitBackdropFilter: "blur(16px)",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          zIndex: 1000,
-          fontFamily: "Inter, sans-serif",
-        }}
       >
         <div
           className="modal-content"
           ref={modalContentRef}
           tabIndex={-1}
-          style={{
-            position: "relative",
-            borderRadius: "20px",
-            maxWidth: "900px",
-            width: "100%",
-            minHeight: "300px",
-            maxHeight: "99vh",
-            backgroundColor: "rgba(15, 15, 40, 0.85)",
-            backdropFilter: "saturate(180%) blur(20px)",
-            WebkitBackdropFilter: "saturate(180%) blur(20px)",
-            border: "1.5px solid transparent",
-            backgroundClip: "padding-box",
-            animation: "glowingShadow 10s ease infinite",
-            boxShadow:
-              "0 0 12px 1px rgba(180, 100, 255, 0.6), inset 0 0 30px 3px rgba(130, 80, 255, 0.3), 0 0 40px 10px rgba(180, 100, 255, 0.3)",
-            color: "#bbbde1",
-          }}
+          aria-describedby="modal-description"
         >
           <button
             aria-label="Close modal"
             onClick={onClose}
-            style={{
-              position: "absolute",
-              top: "30px",
-              right: "16px",
-              zIndex: 10,
-              background: "transparent",
-              border: "none",
-              fontSize: "2.8rem",
-              fontWeight: 700,
-              lineHeight: 1,
-              cursor: "pointer",
-              color: "#ff77e9",
-              textShadow:
-                "0 0 8px #ff77e9, 0 0 18px #d358f7, 0 0 28px #61dafb, 0 0 38px #a164ff",
-              transition: "color 0.3s ease, text-shadow 0.3s ease",
-              userSelect: "none",
-              padding: 0,
-            }}
+            className="modal-close-button"
           >
             &times;
           </button>
 
-          <div
-            className="modal-scrollable-content"
-            style={{
-              maxHeight: "calc(90vh - 1rem)",
-              overflowY: "auto",
-              position: "relative",
-              paddingRight: "1.5rem",
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-            }}
-          >
+          <div className="modal-scrollable-content" id="modal-description">
             <h2
               id="modal-title"
               style={{
@@ -246,11 +319,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
               },
               {
                 title: "Church AV Projects",
-                content: (
-                  <>
-                    Helped multiple churches set up, tune, and run...
-                  </>
-                ),
+                content: <>Helped multiple churches set up, tune, and run...</>,
               },
               {
                 title: "AV Director",
@@ -307,13 +376,11 @@ export default function About({ isOpen, onClose }: AboutProps) {
               },
               {
                 title: "AV Gear Rentals",
-                content:
-                  "I also run my own small AV rental company...",
+                content: "I also run my own small AV rental company...",
               },
               {
                 title: "Content Creator",
-                content:
-                  "I share tips, behind-the-scenes looks, and gear reviews...",
+                content: "I share tips, behind-the-scenes looks, and gear reviews...",
               },
             ].map(({ title, content }, index) => (
               <div
@@ -350,27 +417,13 @@ export default function About({ isOpen, onClose }: AboutProps) {
                   >
                     {title}
                   </p>
-                  <div style={{ lineHeight: 1.45 }}>{content}</div> {/* ✅ FIXED */}
+                  <div style={{ lineHeight: 1.45 }}>{content}</div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div
-            style={{
-              pointerEvents: "none",
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              width: "100%",
-              height: "12rem",
-              background:
-                "linear-gradient(to bottom, rgba(15, 15, 40, 0) 0%, rgba(15, 15, 40, 0.25) 30%, rgba(15, 15, 40, 0.7) 70%, rgba(15, 15, 40, 1) 100%)",
-              zIndex: 5,
-              borderBottomLeftRadius: "20px",
-              borderBottomRightRadius: "20px",
-            }}
-          />
+          <div className="modal-gradient-fade" />
         </div>
       </div>
     </>
