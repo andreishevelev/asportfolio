@@ -2,7 +2,7 @@ import { useState } from "react";
 import Modal from "./about";
 
 export default function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   return (
     <>
@@ -59,7 +59,6 @@ export default function Hero() {
         `}
       </style>
 
-      {/* Outer container sticky ONLY on tablet and up */}
       <div className="sticky top-[-14.5rem] min440:top-[-15rem] z-10 bg-white tablet:sticky tablet:top-0 tablet:bg-[#E1E1E1]">
         <div className="relative w-full hero-mobile-top z-40 rounded-t-[20px] bg-black">
           <div className="absolute inset-0 bg-gradient-to-l from-[#4F8D9F]/70 to-black/70 z-0 rounded-t-[20px]" />
@@ -80,7 +79,6 @@ export default function Hero() {
           />
         </div>
 
-        {/* Middle container sticky only on tablet and up */}
         <div className="relative w-full bg-white tablet:sticky tablet:top-0 tablet:z-20">
           <img
             src="/img/hero-bg.png"
@@ -88,13 +86,11 @@ export default function Hero() {
             className="absolute inset-0 w-full h-full object-cover z-0"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-[#A2489C]/40 z-0" />
-          {/* <div className="relative z-10 px-4 py-6 tablet:py-[30px] flex flex-col tablet:flex-row items-stretch justify-between text-white font-semibold text-[clamp(1rem,4vw,1.5rem)] gap-4"> */}
           <div className="relative z-10 px-4 py-4 tablet:py-[30px] flex flex-col tablet:flex-row items-stretch justify-between text-white font-semibold text-[clamp(1rem,4.2vw,1.3rem)] gap-4">
             <span className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 shadow-md text-center tablet:text-left w-full tablet:w-auto flex items-center min-h-full">
               20+ years of making live events sound and look their best.
             </span>
 
-            {/* Button sticky on mobile, static on tablet+ */}
             <button
               onClick={() => setIsModalOpen(true)}
               className="sticky top-0 z-30 tablet:static glowing-button backdrop-blur-md px-4 py-2 my-3 rounded-xl shadow-md text-center tablet:text-left w-full tablet:w-auto pulse tablet:mr-5 whitespace-nowrap flex items-center justify-center min-h-full"

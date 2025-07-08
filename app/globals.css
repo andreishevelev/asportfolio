@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .app-container {
-  @apply flex bg-white tablet:bg-[#E1E1E1] items-center justify-center
+  @apply flex bg-white tablet:bg-[#E1E1E1] items-center justify-center;
 }
 
 .content-container {
@@ -15,35 +15,35 @@
 }
 
 .top-nav-left-container {
-  @apply hidden tablet:flex  
+  @apply hidden tablet:flex;
 }
 
 .top-nav-center-container {
-  @apply hidden tablet:flex bg-gray-500 tablet:flex grow font-extrabold text-white text-[40px]
+  @apply hidden tablet:flex bg-gray-500 tablet:flex grow font-extrabold text-white text-[40px];
 }
 
 .top-nav-right-container {
-  @apply flex  w-full
+  @apply flex w-full;
 }
 
 .top-nav-px {
-  @apply px-[20px]
+  @apply px-[20px];
 }
 
 .top-nav-item {
-  @apply text-black tablet:text-[20px]
+  @apply text-black tablet:text-[20px];
 }
 
 .lr-margin {
-  @apply px-[10px]
+  @apply px-[10px];
 }
 
 .hero-mobile-top {
-  @apply bg-[#4F8D9F] h-[178px] z-20  rounded-t-[20px]
+  @apply bg-[#4F8D9F] h-[178px] z-20 rounded-t-[20px];
 }
 
 .hero-container {
-  @apply bg-white h-[123px] sticky top-[-40px] z-10
+  @apply bg-white h-[123px] sticky top-[-40px] z-10;
 }
 
 .hero-img {
@@ -51,7 +51,7 @@
 }
 
 .hero-text {
-  @apply text-white text-[40px] pl-5 pt-4 space-y-3 font-extrabold z-10 absolute
+  @apply text-white text-[40px] pl-5 pt-4 space-y-3 font-extrabold z-10 absolute;
 }
 
 @media (max-width: 768px) {
@@ -59,3 +59,5 @@
     display: none !important;
   }
 }
+
+/* Fader-related CSS removed to avoid conflicts with inline styles in React */
