@@ -106,7 +106,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
             onClick={onClose}
             style={{
               position: "absolute",
-              top: "16px",
+              top: "30px",
               right: "16px",
               zIndex: 10,
               background: "transparent",
