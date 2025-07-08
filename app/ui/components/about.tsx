@@ -30,25 +30,27 @@ export default function About({ isOpen, onClose }: AboutProps) {
   return (
     <>
       <style>{`
-        @media (max-width: 600px) {
-          .modal-content {
-            padding: calc(1.5rem + env(safe-area-inset-top)) 1.2rem 2rem 1.2rem !important;
-            box-shadow: 0 0 6px 1px rgba(180, 100, 255, 0.35) !important;
-          }
+  @media (max-width: 600px) {
+    .modal-content {
+      padding: 1.5rem 1.2rem 2rem 1.2rem !important;
+      box-shadow: 0 0 6px 1px rgba(180, 100, 255, 0.35) !important;
+      margin-top: 40px !important; /* This will now apply */
+    }
 
-          .modal-scrollable-content video,
-          .modal-scrollable-content img {
-            max-width: 100% !important;
-            height: auto !important;
-          }
-        }
+    .modal-scrollable-content video,
+    .modal-scrollable-content img {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+  }
 
-        @media (min-width: 601px) {
-          .modal-content {
-            padding: calc(2.5rem + env(safe-area-inset-top)) 3rem 3rem 3rem;
-          }
-        }
-      `}</style>
+  @media (min-width: 601px) {
+    .modal-content {
+      padding: 2.5rem 3rem 3rem 3rem;
+    }
+  }
+`}</style>
+
 
       <div
         className="modal-overlay"
@@ -358,6 +360,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
               borderBottomRightRadius: "20px",
             }}
           />
+
         </div>
       </div>
     </>
