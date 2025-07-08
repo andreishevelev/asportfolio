@@ -28,7 +28,7 @@ function Page() {
     <>
       {/* Hide TopNav if modal is open */}
       {!isModalOpen && (
-        <div className="tablet:hidden sticky top-0 z-40">
+        <div className="tablet:hidden sticky top-0 z-40 about-open:hidden">
           <Header />
         </div>
       )}

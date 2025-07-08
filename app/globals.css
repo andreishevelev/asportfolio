@@ -54,3 +54,8 @@
   @apply text-white text-[40px] pl-5 pt-4 space-y-3 font-extrabold z-10 absolute
 }
 
+@media (max-width: 768px) {
+  .about-open .about-open\:hidden {
+    display: none !important;
+  }
+}
