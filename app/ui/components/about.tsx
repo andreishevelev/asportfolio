@@ -238,7 +238,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
             >
               I’ve been working in audio-visual for over 20 years, and I still
               love every bit of it. From live shows to studio builds, I’ve been
-              behind the scenes making things sound and look great.
+              behind the scenes and faders making things sound and look great.
             </p>
 
             <h3
@@ -260,7 +260,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
                 title: "Live Events & FOH Mixing",
                 content: (
                   <>
-                    I’ve mixed hundreds of shows as a Front-of-House engineer—always aiming for smooth, clean sound that just feels right.
+                    I’ve mixed hundreds of shows as a Front-of-House engineer—always aiming for smooth, clean sound that just feels right. But my experience goes far beyond the console. I’ve worked every stage of live audio production—from loading in gear as a stagehand, to running cables, to leading entire productions as an A1. I know acoustic and electrical engineering principles, signal flow inside and out, and how to troubleshoot fast under pressure. I understand how every piece fits together because I’ve done it all—this isn’t just a job, it’s a trade I’ve learned from the ground up.
                     <div style={{ marginTop: "1rem" }}>
                       <video
                         autoPlay
@@ -380,7 +380,7 @@ export default function About({ isOpen, onClose }: AboutProps) {
               },
               {
                 title: "AV Gear Rentals",
-                content: "I also run my own small AV rental company—perfect for events, church upgrades, or short-term projects.",
+                content: "I also run my own small AV rental company—perfect for corporate events and small bands.",
               },
               {
                 title: "Content Creator",
