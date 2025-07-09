@@ -2,7 +2,7 @@ import { useState } from "react";
 import Modal from "./about";
 
 export default function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
