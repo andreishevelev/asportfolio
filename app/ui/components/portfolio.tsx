@@ -61,9 +61,9 @@ export default function Portfolio({ isModalOpen, setIsModalOpen }: PortfolioProp
                 </div>
 
                 <div className="w-full custom:w-1/2 flex mt-[2vw] custom:mt-0">
-                  <div className="flex flex-col justify-between flex-grow rounded-[20px] p-[1vw] text-white bg-black/30 shadow-xl backdrop-blur-md">
+                  <div className="flex flex-col justify-between flex-grow rounded-[20px] p-[1vw] text-white bg-black/60 shadow-xl backdrop-blur-md">
                     <div>
-                      <p className="px-2 py-3 rounded-xl border border-white/20 shadow-md text-center leading-relaxed text-[clamp(1rem,4vw,1.4rem)] font-normal bg-white/10">
+                      <p className="px-2 py-3 rounded-xl border border-white/20 shadow-md tablet:p-6 text-center tablet:text-left leading-relaxed text-[clamp(1rem,4vw,1.4rem)] font-normal bg-white/10 backdrop-blur-md">
                         {item.review}
                       </p>
 
