@@ -15,7 +15,9 @@ export default function Portfolio({ isModalOpen, setIsModalOpen }: PortfolioProp
         <div className="relative bg-[#D4D4D4]"></div>
 
         <div className="flex justify-center items-center">
-          <h2 className="text-[clamp(1vw,20vw,3rem)] font-bold px-4 my-[1vw] text-black">
+          <h2
+            id="reviews"
+            className="text-[clamp(1vw,20vw,3rem)] font-bold px-4 my-[1vw] text-black">
             REVIEWS
           </h2>
         </div>

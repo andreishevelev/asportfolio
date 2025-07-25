@@ -380,11 +380,59 @@ export default function About({ isOpen, onClose }: AboutProps) {
               },
               {
                 title: "AV Gear Rentals",
-                content: "I also run my own small AV rental company—perfect for corporate events and small bands.",
+                content: (
+                  <>
+                    I also run my own small AV rental company—perfect for corporate events and small bands. Check it out at{" "}
+                    <a
+                      href="https://rent-av.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "#61dafb",
+                        textDecoration: "underline",
+                        fontWeight: "600",
+                      }}
+                    >
+                      rent-av.com
+                    </a>
+                    .
+                  </>
+                ),
               },
+
               {
                 title: "Content Creator",
-                content: "I share tips, behind-the-scenes looks, and gear reviews on my blog and YouTube channel—check them out if you’re into AV stuff!",
+                content: (
+                  <>
+                    I share tips, behind-the-scenes looks, and gear reviews on my{" "}
+                    <a
+                      href="https://yourblog.example.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "#61dafb",
+                        textDecoration: "underline",
+                        fontWeight: "600",
+                      }}
+                    >
+                      blog
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="https://youtube.com/@behindthefader"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "#ff77e9",
+                        textDecoration: "underline",
+                        fontWeight: "600",
+                      }}
+                    >
+                      YouTube channel
+                    </a>
+                    —check them out if you’re into AV stuff!
+                  </>
+                ),
               },
             ].map(({ title, content }, index) => (
               <div

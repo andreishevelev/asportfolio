@@ -60,4 +60,16 @@
   }
 }
 
+/* globals.css or index.css */
+::-webkit-scrollbar {
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 4px;
+}
+
 /* Fader-related CSS removed to avoid conflicts with inline styles in React */
